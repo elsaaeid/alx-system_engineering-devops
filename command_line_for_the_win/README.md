@@ -14,4 +14,4 @@ These are screenshots from my progress in the <a href="https://cmdchallenge.com/
     <li>and The <a href="https://12days.cmdchallenge.com/">12days.CMDChallenge with 12 tasks</a></li>
 </ul>
 <br />
-<p>I have provided the screenshots both in .png and .jpg format</p>
+<p>I have provided the screenshots both in PNG format</p>
