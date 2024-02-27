@@ -1,7 +1,7 @@
 # Web infrastructure design
 <hr />
 
-<img src="web-infrastructure.gif"  alt="Web Infrastructure Design Process"/>
+<img src="web-infrastructure.gif"  alt="Web Infrastructure Design Process" />
 <h3>Learning Objectives</h3>
 <hr />
 
