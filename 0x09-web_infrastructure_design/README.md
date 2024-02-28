@@ -1,7 +1,12 @@
 # Web infrastructure design
 <hr />
 
+<h3>Web Infrastructure Design Process</h3>
 <img src="web-infrastructure.gif"  alt="Web Infrastructure Design Process" />
+
+<hr />
+
+<h3>secured Web Infrastructure Design Process with (Firewall and SSL Certification)</h3>
 <img src="web-infra2.gif"  alt="Web Infrastructure Design Process" />
 <h3>Learning Objectives</h3>
 <hr />
