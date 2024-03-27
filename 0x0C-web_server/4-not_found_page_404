@@ -19,7 +19,7 @@ sudo ufw allow 'Nginx HTTP'
 sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 7755 /var/www
 
-# Backup defualt index
+# Backup default index
 cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
 
 # Creating new nginx
@@ -30,7 +30,7 @@ sudo sed -i "241\       rewrite ^/redirect_me https://www.youtube.com/watch?v=QH
 
 # Set up a 404 page
 echo "Ceci n'est pas une page" >> /var/www/html/error_404.html
-sudo sed -i '25i\      error_page 404 /error_404.html;' /etc/nginx/sites-available/default
+sudo sed -i "25i\      error_page 404 /error_404.html;" /etc/nginx/sites-available/default
 
 # Restarting nginx
 sudo service nginx restart
