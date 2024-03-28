@@ -1,0 +1,5 @@
+# To configure your SSH client to connect to a server without typing a password
+Host 431807-web-01
+    HostName 54.144.133.80
+    User ubuntu
+    IdentityFile ~/.ssh/id_rsa
