@@ -1,0 +1,4 @@
+# To configure your SSH client to connect to a server without typing a password
+Host 100.27.14.97
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no

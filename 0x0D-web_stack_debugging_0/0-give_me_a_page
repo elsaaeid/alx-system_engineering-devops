@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# starting a Docker container based on the holbertonschool/265-0his image
+# exposing the container's web server on port 8080 of the host machine
+sudo service apache2 start

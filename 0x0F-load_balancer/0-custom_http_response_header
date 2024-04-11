@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# script that doubles the number of webservers and adds new configs
+
+# Install nginx
+sudo apt-get  update ; sudo apt-get install -y nginx
+
+echo 'add_header X-Served-By $hostname;' | sudo tee /etc/nginx/conf.d/custom-header.conf > /dev/null
+
+# Restart nginx
+sudo service nginx restart
