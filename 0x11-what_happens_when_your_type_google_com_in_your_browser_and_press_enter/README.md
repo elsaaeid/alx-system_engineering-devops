@@ -1,12 +1,13 @@
 <h1>
     what happens when you type www.google.com in your browser and press enter?
 </h1>
-<hr />
+
 <article>
 Have you ever wondered what happens behind the scenes when you type “https://www.google.com" in your browser and press Enter? In this blog post, I will take you on a journey through the various stages of a web request, unraveling the intricate processes involved in delivering the Google search page to your screen. From the initial DNS request to the final database retrieval, let’s dive in and explore the fascinating world of web technology.
 </article>
 <hr />
 <img src="Master.gif" alt="what happens when you type www.google.com in your browser and press enter?" />
+<hr />
 <ul>
     <li>
     DNS Request: When you press Enter after typing “https://www.google.com," the first step is a DNS (Domain Name System) request. Your browser sends a request to a DNS server, asking for the IP address associated with the domain name “www.google.com." The DNS server responds with the IP address, allowing your browser to establish a connection.
