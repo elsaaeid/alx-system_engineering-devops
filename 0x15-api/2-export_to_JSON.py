@@ -12,7 +12,7 @@ if __name__ == '__main__':
     url = "https://jsonplaceholder.typicode.com/users/{}".format(uid)
     user = requests.get(url, verify=False).json()
     url = "https://jsonplaceholder.typicode.com/todos?userId={}".format(uid)
-    todo = requests.get(url, verify=False).json()
+    todos = requests.get(url, verify=False).json()
     name = user.get('username')
     todo = [{"task": todo.get("title"),
           "username": name,
