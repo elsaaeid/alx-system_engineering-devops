@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
     a valid subreddit, return 0.
     """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {"User-Agent": "Mozilla/5.0"}
+    headers = {"User-Agent": "Custom"}
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
