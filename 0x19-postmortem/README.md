@@ -41,8 +41,6 @@
     </h2>
     <p>
         To prevent similar issues in the future, the following actions will be taken:
-
-
         Conduct a thorough review of the access control rules and configurations to ensure they align with the intended security policies.
         Implement automated tests to validate the functionality of the authentication middleware, including proper handling of authorized and unauthorized requests.
         Enhance monitoring and alerting systems to proactively detect and notify the team about unauthorized access attempts or misconfigurations.
