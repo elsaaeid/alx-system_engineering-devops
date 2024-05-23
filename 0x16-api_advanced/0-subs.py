@@ -11,10 +11,24 @@ def number_of_subscribers(subreddit):
     """Queries the Reddit API if not
     a valid subreddit, return 0.
     """
-    if subreddit is None or type(subreddit) is not str:
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    headers = {'User-Agent': 'Custom'}
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        data = response.json()
+        subscribers = data['data']['subscribers']
+        return subscribers
+    else:
         return 0
-    res = requests.get('http://www.reddit.com/r/{}/about.json'.format(subreddit),
-                     headers={'User-Agent': '0x16-api_advanced:project:\
-v1.0.0 (by /u/firdaus_cartoon_jr)'}).json()
-    subs_number = res.get("data", {}).get("subscribers", 0)
-    return subs_number
+
+if __name__ == '__main__':
+    import sys
+
+    if len(sys.argv) < 2:
+        print("Please pass an argument for the subreddit to search.")
+    else:
+        subreddit = sys.argv[1]
+        num_subscribers = number_of_subscribers(subreddit)
+        print(num_subscribers)
