@@ -15,21 +15,26 @@ def recurse(subreddit, hot_list=[]):
     If not a valid subreddit, return None.
     """
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
-    headers = {"User-Agent": "Custom"}
-    response = requests.get(url, headers=headers)
+    headers = {"User-Agent": "by u/Global_Finding_8439'"}
+    params = [
+        "after": after,
+        "count": count,
+        "limit": 100
+    ]
+    response = requests.get(url,
+        headers=headers,
+        params=params,
+        allow_redirects=False)
 
-    if response.status_code != 200:
+    if response.status_code == 404:
         return None
 
-    data = response.json()
-    posts = data["data"]["children"]
+    data = response.json().get("data")
+        after = data.get("after")
+        count += data.get("dist")
+        for c in data.get("children"):
+            hot_list.append(c.get("data").get("title"))
 
-    for post in posts:
-        title = post["data"]["title"]
-        hot_list.append(title)
-
-    if "after" in data["data"]:
-        after = data["data"]["after"]
-        return recurse(subreddit, hot_list, after=after)
-
-    return hot_list
+        if after is not None:
+            return recurse(subreddit, hot_list, after, count)
+        return hot_list
