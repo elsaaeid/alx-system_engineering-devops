@@ -6,6 +6,7 @@ If the subreddit is invalid, it prints None.
 
 import requests
 
+
 def top_ten(subreddit):
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
     headers = {'User-Agent': 'by u/Global_Finding_8439'}
