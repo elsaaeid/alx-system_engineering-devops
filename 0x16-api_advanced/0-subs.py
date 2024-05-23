@@ -4,31 +4,31 @@ Function that queries the Reddit API
 and returns the number of subscribers
 """
 
-from requests import get
-from sys import argv
+import requests
 
 
-headers = {
-    "User-Agent": "User-Agent",
-    "X-Forwared-For": "iamsaid"
-}
-
-
-def number_of_subscribers(subreddit: str) -> int:
-     """Queries the Reddit API if not
+def number_of_subscribers(subreddit):
+    """Queries the Reddit API if not
     a valid subreddit, return 0.
     """
-    response = get("https://www.reddit.com/r/{}/about.json".format(subreddit),
-                   headers=headers)
-    data = response.json()
-    try:
-        if 'error' in data.keys():
-            return 0
-        else:
-            return data['data']['subscribers']
-    except Exception as e:
+    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    headers = {'User-Agent': 'Custom'}
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        data = response.json()
+        subscribers = data['data']['subscribers']
+        return subscribers
+    else:
         return 0
 
+if __name__ == '__main__':
+    import sys
 
-if __name__ == "__main__":
-    print(number_of_subscribers(argv[1]))
+    if len(sys.argv) < 2:
+        print("Please pass an argument for the subreddit to search.")
+    else:
+        subreddit = sys.argv[1]
+        num_subscribers = number_of_subscribers(subreddit)
+        print(num_subscribers)
